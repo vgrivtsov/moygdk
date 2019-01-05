@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% block content %}
+<div class="homepage">
+  <!--============================
+  =            Banner            =
+  =============================-->
+  {% image page.image fill-1920x600 as image %}
+  <section class="banner bg-banner-one overlay" style="background-image:url('{{ image.url }}')">
+  	<div class="container-fluid">
+  		<div class="row">
+  			<div class="col-lg-12">
+  				<!-- Content Block -->
+  				<div class="container">
+  					<!-- Coundown Timer -->
+  					<!-- <div class="timer"></div> -->
+  					<!-- <h1>{{ page.title }}</h1>
+  					<h4>{{ page.hero_text }}</h4> -->
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </section>
+
+  <!--====  End of Banner  ====-->
+
+  <!--===========================
+  =            About            =
+  ============================-->
+
+  <section class="section about">
+  	<div class="container">
+  		<div class="row">
+        {% if page.promo_image or page.promo_title or page.promo_text %}
+  			<div class="col-lg-4 col-md-6 align-self-center">
+  				<div class="image-block two bg-about">
+  					<figure>{% image page.promo_image fill-350x280-c100 %}</figure>
+  				</div>
+  			</div>
+  			<div class="col-lg-8 col-md-6 align-self-center">
+  				<div class="content-block">
+  					<h2>{{ page.promo_title }}</h2>
+  					<div class="description-one">
+  						<p>
+  							{{ page.promo_text|safe }}
+  						</p>
+  					</div>
+  				</div>
+  			</div>
+        {% endif %}
+  		</div>
+  	</div>
+  </section>
+
+  <!--====  End of About  ====-->
+{% if page.body %}
+<div class="container-fluid streamfield">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 streamfield-column">
+                {{ page.body }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<!--==============================
+=            Events            =
+===============================-->
+{% if page.featured_section_2 %}
+<section class="section speakers bg-speaker overlay-lighter">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Section Title -->
+				<div class="section-title white">
+					<a href="{% slugurl 'afisha' %}"><h3>Афиша</h3></a>
+					<a href="{% slugurl 'afisha' %}"><p>Ближайшие мероприятия</p></a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+      {% for childpage in page.featured_section_2.specific.children|slice:"5" %}
+        {% if childpage.event_date > nowtime %}
+			    <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+			    	<div class="speaker-item">
+			    		<div class="image">
+                <a href="{{childpage.url}}">
+                    <figure>
+                        {% image childpage.image fill-250x250-c100 %}
+                    </figure>
+                </a>
+			    			<div class="primary-overlay"></div>
+			    			<div class="socials">
+                    <p class="list-inline-item"><a href="{{childpage.url}}">{{childpage.subtitle}}
+                      {{childpage.event_date}} {{childpage.event_time}} {{ childpage.introduction|truncatewords:15 }}</a></p>
+			    			</div>
+			    		</div>
+			    		<div class="content text-center">
+			    			<h5><a href="{{childpage.url}}">{{childpage.title}}</a></h5>
+			    		</div>
+			    	</div>
+			    </div>
+        {% endif %}
+      {% endfor %}
+		</div>
+	</div>
+</section>
+{% endif %}
+<!--====  End of Events  ====-->
+<!--=============================
+=            Gallery            =
+==============================-->
+
+<section class="gallery-full section pb-0">
+	<div class="container-fluid p-0">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					  <a href="{% slugurl 'gallery' %}"><h3>Фотоотчёты <span class="alternate">Городского дворца культуры</span></h3></a>
+					<p>Фотоотчёты о прошедших мероприятиях</p>
+				</div>
+			</div>
+		</div>
+		<div class="row no-gutters">
+			<!-- Gallery Image -->
+			<div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04376_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04376.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+      <!-- Gallery Image -->
+      <div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04384_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04384.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+			<!-- Gallery Image -->
+      <div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04381_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04381.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+      <!-- Gallery Image -->
+      <div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04377_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04377.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+			<!-- Gallery Image -->
+      <div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04387_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04387.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+			<!-- Gallery Image -->
+      <div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04393_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04393.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+			<!-- Gallery Image -->
+      <div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04396_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04396.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+			<!-- Gallery Image -->
+      <div class="col-lg-3 col-md-4">
+				<div class="image">
+					<img src="{% static 'images/gallery/DSC04398_small.png' %}" alt="gallery-image" class="img-fluid">
+					<div class="primary-overlay">
+        				<a class="image-popup" data-effect="mfp-with-zoom" href="{% static 'images/gallery/DSC04398.png' %}"><i class="fa fa-picture-o"></i></a>
+        			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Gallery  ====-->
+<!--==========================
+=          Feature 3  News    =
+===========================-->
+<section class="news section">
+  {% if page.featured_section_3 %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+          <a href="{% slugurl 'news' %}"><h3>Новости <span class="alternate">Городского Дворца культуры</span></h3></a>
+					<p>Новости, статьи, обзоры и комментарии</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+      {% for childpage in page.featured_section_3.specific.children|slice:"3" %}
+			<div class="col-lg-4 col-md-6 col-sm-8 col-10 m-auto">
+				<div class="blog-post">
+					<div class="post-thumb">
+            <a href="{{childpage.url}}">
+              {% image childpage.image fill-350x254-c100 %}
+						 <img src="{{ childpage.image.url }}" width="{{ childpage.image.width }}" height="{{ childpage.image.height }}" alt="{{ childpage.image.alt }}" class="img-fluid" />
+						</a>
+					</div>
+					<div class="post-content">
+						<div class="post-title">
+							<h2><a href="{{childpage.url}}">{{childpage.title}}</a></h2>
+						</div>
+						<div class="post-meta">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<i class="fa fa-user-o"></i>
+									{% for author in childpage.authors %}
+                    {{ author }}{% if not forloop.last %}, {% endif %}
+                  {% endfor %}
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+      {% endfor %}
+		</div>
+
+	</div>
+    {% endif %}
+</section>
+<!--====  Feature 3 - News  ====-->
+<!--==============================================
+=            Call to Action Subscribe            =
+===============================================-->
+
+<section class="cta-subscribe bg-subscribe overlay-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 mr-auto">
+				<!-- Subscribe Content -->
+				<div class="content">
+					<h3>Подпишитесь на наши<span class="alternate">Новости</span></h3>
+					<p>Оставайтесь в курсе предстоящих событий и последних новостей культуры</p>
+				</div>
+			</div>
+			<div class="col-md-6 ml-auto align-self-center">
+				<!-- Subscription form -->
+				<form action="#" class="row">
+					<div class="col-lg-8 col-md-12">
+						<input type="email" class="form-control main white mb-lg-0" placeholder="Email">
+					</div>
+					<div class="col-lg-4 col-md-12">
+						<div class="subscribe-button">
+							<button class="btn btn-main-md">Подписаться!</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Call to Action Subscribe  ====-->
+<!--================================
+=            Google Map            =
+=================================-->
+<section class="map">
+	<!-- Google Map -->
+	<div id="map"></div>
+	<div class="address-block">
+		<h4>МАУК Городской Дворец культуры</h4>
+		<ul class="address-list p-0 m-0">
+			<li><i class="fa fa-home"></i><span>ул. Ленинская, 26, <br>г. Партизанск, Приморский край.</span></li>
+			<li><i class="fa fa-phone"></i><span>8(42363) 677-58</span></li>
+		</ul>
+	</div>
+</section>
+<!-- Google Mapl -->
+<!--====  End of Google Map  ====-->
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% load navigation_tags wagtailcore_tags %}
+{% get_site_root as site_root %}
+
+{% for menuitem in menuitems %}
+  <li class="presentation {{ menuitem.title|lower|cut:" " }}{% if menuitem.active %} active{% endif %}{% if menuitem.show_dropdown %} nav-item dropdown dropdown-slide{% endif %}">
+      {% if menuitem.show_dropdown %}
+            <a class="nav-link" href="#" data-toggle="dropdown">{{ menuitem.title }}<span>/</span></a>
+              <div class="dropdown-menu">
+                {% top_menu_children parent=menuitem %}
+                {# Used to display child menu items #}
+              </div>
+      {% else %}
+      <li class="nav-item">
+          <a class="nav-link" href="{% pageurl menuitem %}" role="menuitem">{{ menuitem.title }}<span>/</span></a>
+      {% endif %}
+  </li>
+{% endfor %}

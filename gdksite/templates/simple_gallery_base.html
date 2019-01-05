@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{{ page.seo_title }}{% endblock %}</title>
+  <meta name="description" content="{% block metadesc %}{{ page.search_description }}{% endblock %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+  <div class="container">
+  {% block content %}{% endblock content %}
+  </div>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% load navigation_tags static wagtailuserbar %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+{% endblock head %}
+
+<body class="{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}">
+{% wagtailuserbar %}
+
+{% block header %}
+    {# Header contains the main_navigation block #}
+    {% include "includes/header.html" with parent=site_root calling_page=self %}
+{% endblock header %}
+
+{% block head-extra %}
+{% endblock head-extra %}
+
+{% block messages %}
+    {% include "includes/messages.html" %}
+{% endblock messages %}
+
+
+{% block breadcrumbs %}
+    {# breadcrumbs is defined in base/templatetags/navigation_tags.py #}
+    {% breadcrumbs %}
+{% endblock breadcrumbs %}
+
+<main role="main">
+    {% block content %}
+    {% endblock content %}
+</main>
+    <!-- Footer -->
+    <footer>
+        {% include "includes/footer.html" %}
+    </footer>
+
+    <!-- JAVASCRIPTS -->
+      <!-- jQuey -->
+      <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+      <!-- Popper js -->
+      <script src="{% static 'plugins/popper/popper.min.js' %}"></script>
+      <!-- Bootstrap 4 -->
+      <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+      <!-- Smooth Scroll -->
+      <script src="{% static 'plugins/smoothscroll/SmoothScroll.min.js' %}"></script>
+      <!-- Isotope -->
+      <script src="{% static 'plugins/isotope/mixitup.min.js' %}"></script>
+      <!-- Magnific Popup -->
+      <script src="{% static 'plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+      <!-- Slick Carousel -->
+      <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+      <!-- SyoTimer -->
+      <script src="{% static 'plugins/syotimer/jquery.syotimer.min.js' %}"></script>
+      <!-- Google Mapl -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnUkpRjS8D2DBMwOoT-Q2R7rAfG1L7qgY"></script>
+      <script type="text/javascript" src="{% static 'plugins/google-map/gmap.js' %}"></script>
+      <!-- Custom Script -->
+      <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load navigation_tags wagtailimages_tags %}
+
+{% block content %}
+
+    <!-- {% image self.image fill-1920x600 as hero_img %} -->
+        <!-- {% include "base/include/header-hero.html" %} -->
+
+        <section class="news section">
+        	<div class="container">
+        		<div class="row mt-30">
+        			<div class="col-lg-8 col-md-10 mx-auto">
+        				<div class="block">
+        					<!-- Article -->
+        					<article class="blog-post single">
+        						<div class="post-thumb">
+                      {% image page.image fill-770x490-c0 as image %}
+                        <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" class="img-fluid" />
+        						</div>
+        						<div class="post-content">
+          							<div class="post-title">
+        								<h3>{{ page.title }}</h3>
+        							</div>
+                      <div class="post-meta">
+          								<ul class="list-inline">
+          									<li class="list-inline-item">
+                              {% if page.authors %}
+                                  <div class="blog-avatars">
+                                      {% for author in page.authors %}
+                                          <div class="author">{% image author.image fill-50x50-c100 class="blog-avatar" %}
+                                            <span class="name">  {{ author.first_name }} {{ author.last_name }}</span></div>
+                                      {% endfor %}
+                                  </div>
+                              {% endif %}
+          									</li>
+          								</ul>
+          						</div>
+        							<div class="post-details">
+                        {{ page.body }}
+        								<div class="share-block">
+        									<div class="tag">
+                            {% if page.get_tags %}
+        										<p>
+        											Теги:
+        										</p>
+                            <ul class="list-inline">
+                                {% for tag in page.get_tags  %}
+                                <li class="list-inline-item">
+                                    <a href="{{ tag.url }}" class="btn btn-sm">{{ tag }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+        									</div>
+        									<div class="share">
+        										<p>
+        											Поделиться:
+        										</p>
+        										<ul class="social-links-share list-inline">
+        							        <li class="list-inline-item">
+        							          <a href="#"><i class="fa fa-facebook"></i></a>
+        							        </li>
+        							        <li class="list-inline-item">
+        							          <a href="#"><i class="fa fa-vk"></i></a>
+        							        </li>
+        							        <li class="list-inline-item">
+        							          <a href="#"><i class="fa fa-instagram"></i></a>
+        							        </li>
+        							        <li class="list-inline-item">
+        							          <a href="#"><i class="fa fa-odnoklassniki"></i></a>
+        							        </li>
+        							      </ul>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        					</article>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+{% endblock content %}

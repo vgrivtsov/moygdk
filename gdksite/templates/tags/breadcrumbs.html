@@ -1,0 +1,32 @@
+{% load wagtailcore_tags %}
+<!--================================
+=            Page Title            =
+=================================-->
+
+{% if ancestors %}
+<section class="page-title bg-title overlay-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="title">
+					<h3>{{ancestors.1.title}}</h3>
+				</div>
+				<ol class="breadcrumb p-0 m-0">
+				  <li class="breadcrumb-item"><a href="/">На главную</a></li>
+          {% for ancestor in ancestors|slice:"1:" %}
+            {% if forloop.last %}
+              <li class="breadcrumb-item active" aria-level="{{ancestors|length}}">
+                {{ ancestor }}
+              </li>
+            {% else %}
+              <li class="breadcrumb-item"><a href="{% pageurl ancestor %}" aria-level="{% cycle 1 2 3 4 5 %}">{{ ancestor }}</a></li>
+            {% endif %}
+          {% endfor %}
+				</ol>
+			</div>
+		</div>
+	</div>
+
+</section>
+{% endif %}
+<!--====  End of Page Title  ====-->

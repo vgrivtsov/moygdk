@@ -82,6 +82,7 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
+wagtail_env/
 .env
 .venv
 env/
