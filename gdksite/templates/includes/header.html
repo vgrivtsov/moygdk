@@ -1,5 +1,5 @@
 {% load navigation_tags %}
-
+{% load static %}
 
 <!--========================================
 =            Navigation Section            =
@@ -9,7 +9,7 @@
   <div class="container-fluid p-0">
       <!-- logo -->
       <a class="navbar-brand" href="/">
-        <img src="images/logo.png" alt="logo">
+        <img src="{% static 'images/logo/logo4.png' %}" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars"></span>

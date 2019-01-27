@@ -1,16 +1,17 @@
 /*=== MEDIA QUERY ===*/
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Alice:300,400,500,600,700|Roboto:300,400,500,700");
 html {
   font-size: 16px;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  padding-top: 150px;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   color: #222222;
   font-weight: 600;
 }
@@ -123,8 +124,8 @@ ul.social-links li a i {
 
 .overlay:before {
   content: '';
-  background: url(../images/background/objects.png) no-repeat;
-  position: absolute;
+  /* background: url(../images/background/objects.png) no-repeat; */
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
@@ -133,9 +134,9 @@ ul.social-links li a i {
 
 .overlay:after {
   content: '';
-  background: -webkit-linear-gradient(-45deg, #1e5799 0%, #1d1546 0%, #1a0b25 100%, #207cca 100%);
-  opacity: .25;
-  position: absolute;
+  /* background: -webkit-linear-gradient(-45deg, #1e5799 0%, #1d1546 0%, #1a0b25 100%, #207cca 100%);
+  opacity: .25; */
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
@@ -155,7 +156,7 @@ ul.social-links li a i {
 
 .text-overlay:after {
   content: 'CONFERENCE';
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   font-weight: 600;
   font-size: 215px;
   width: 100%;
@@ -171,7 +172,7 @@ ul.social-links li a i {
 
 .overlay-primary:before {
   content: '';
-  background: rgba(255, 102, 0, 0.93);
+  background: rgba(251, 179, 26, 0.93);
   position: absolute;
   top: 0;
   left: 0;
@@ -215,7 +216,7 @@ ul.social-links li a i {
 }
 
 span.alternate {
-  color: #ff6600;
+  color: #FBB31A;
   font-style: italic;
   font-weight: 400;
 }
@@ -225,7 +226,7 @@ a {
 }
 
 a:focus, a:hover {
-  color: #ff6600;
+  color: #FBB31A;
   text-decoration: none;
 }
 
@@ -238,7 +239,7 @@ button:hover {
 }
 
 .bg-blue {
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 .bg-banner-one {
@@ -400,7 +401,7 @@ button:hover {
   height: 125px;
   width: 125px;
   font-size: 40px;
-  background: #ff6600;
+  background: #FBB31A;
   border-radius: 100%;
   color: #fff;
   line-height: 125px;
@@ -423,7 +424,7 @@ button:hover {
 }
 
 .form-control.main:focus {
-  border: 1px solid #ff6600;
+  border: 1px solid #FBB31A;
 }
 
 .form-control.white {
@@ -495,14 +496,14 @@ select.form-control:not([size]):not([multiple]) {
 
 .btn {
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   transition: all .3s ease;
 }
 
 .btn-main {
   padding: 25px 45px;
   border-radius: 3px;
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
   outline: none;
 }
@@ -519,7 +520,7 @@ select.form-control:not([size]):not([multiple]) {
 .btn-main-md {
   padding: 15px 40px;
   border-radius: 0;
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
   outline: none;
   font-size: 0.9375rem;
@@ -546,15 +547,15 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .btn-transparent-md:hover {
-  background: #ff6600;
-  border-color: #ff6600;
+  background: #FBB31A;
+  border-color: #FBB31A;
   color: #fff;
 }
 
 .btn-main-sm {
   padding: 15px 35px;
   border-radius: 3px;
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
   outline: none;
   font-size: 14px;
@@ -577,7 +578,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .btn-white-md:hover {
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
 }
 
@@ -621,7 +622,7 @@ select.form-control:not([size]):not([multiple]) {
   padding-left: 8px;
   padding-right: 20px;
   font-size: 1.06rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -642,7 +643,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .main-nav .navbar-nav .nav-item.active .nav-link {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .main-nav .dropdown-slide {
@@ -659,7 +660,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .main-nav .dropdown-slide:hover .dropdown-menu {
-  border-top: 3px solid #ff6600;
+  border-top: 3px solid #FBB31A;
   display: none;
   opacity: 1;
   display: block;
@@ -716,7 +717,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .main-nav .dropdown-slide .dropdown-menu .dropdown-item:hover {
   background: #fff;
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 @media (max-width: 480px) {
@@ -727,7 +728,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .main-nav .ticket {
-  background: #ff6600;
+  background: #FBB31A;
   display: block;
   padding: 34px 32px;
 }
@@ -752,7 +753,7 @@ select.form-control:not([size]):not([multiple]) {
   color: #fff;
   font-size: 1.125rem;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   border-left: 1px solid #ffa366;
   padding-left: 24px;
 }
@@ -839,7 +840,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .footer-main .block ul.social-links-footer li a:hover {
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 .footer-main .block ul.social-links-footer li a:hover i {
@@ -852,11 +853,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .subfooter .copyright-text p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .subfooter .copyright-text p a {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 @media (max-width: 480px) {
@@ -870,7 +871,7 @@ select.form-control:not([size]):not([multiple]) {
   height: 45px;
   width: 45px;
   text-align: center;
-  background: #ff6600;
+  background: #FBB31A;
   float: right;
 }
 
@@ -981,7 +982,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .banner .block .timer .syotimer-cell .syotimer-cell__value {
   min-width: 80px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   font-size: 35px;
   line-height: 77px;
   text-align: center;
@@ -1006,13 +1007,13 @@ select.form-control:not([size]):not([multiple]) {
   text-transform: lowercase;
   font-weight: normal;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .banner .block h1 {
   text-transform: uppercase;
   font-size: 5.5rem;
-  color: #ff6600;
+  color: #FBB31A;
   font-weight: 500;
   margin-bottom: 5px;
   text-shadow: 3.5px 6.062px 0px rgba(0, 0, 0, 0.1);
@@ -1052,7 +1053,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .banner-two .block h1 {
-  color: #ff6600;
+  color: #FBB31A;
   font-size: 88px;
 }
 
@@ -1118,7 +1119,7 @@ select.form-control:not([size]):not([multiple]) {
   content: "";
   width: 60px;
   height: 3px;
-  background: #ff6600;
+  background: #FBB31A;
   display: block;
   margin-top: 10px;
 }
@@ -1189,7 +1190,7 @@ select.form-control:not([size]):not([multiple]) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ff6600;
+  background: #FBB31A;
   opacity: .85;
   transition: .3s ease;
 }
@@ -1266,7 +1267,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .speakers .speaker-item .content h5 a:hover {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .speakers .speaker-item .content p {
@@ -1296,10 +1297,10 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule .schedule-tab ul li.nav-item a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   text-transform: uppercase;
   font-size: 1.5rem;
-  color: #ff6600;
+  color: #FBB31A;
   font-weight: 500;
   display: block;
   border-radius: 0;
@@ -1317,7 +1318,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule .schedule-tab ul li.nav-item a.active {
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
   position: relative;
 }
@@ -1335,7 +1336,7 @@ select.form-control:not([size]):not([multiple]) {
   height: 0;
   border-style: solid;
   border-width: 0 20px 20px 0;
-  border-color: transparent #ff6600 transparent transparent;
+  border-color: transparent #FBB31A transparent transparent;
 }
 
 @media (max-width: 767px) {
@@ -1424,13 +1425,13 @@ select.form-control:not([size]):not([multiple]) {
 
 .schedule .schedule-contents .schedule-item li.headings {
   padding: 22px 40px;
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 .schedule .schedule-contents .schedule-item li.headings div {
   color: #fff;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .schedule .schedule-contents .schedule-item li.schedule-details {
@@ -1449,7 +1450,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .schedule .schedule-contents .schedule-item li.schedule-details .block div {
   color: #222222;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .schedule .schedule-contents .schedule-item li.schedule-details .block div i {
@@ -1489,7 +1490,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule .schedule-contents .schedule-item li.schedule-details .block:hover span.name {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .schedule .download-button {
@@ -1526,7 +1527,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule.two .schedule-tab ul li.nav-item a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
   color: #222222;
@@ -1547,7 +1548,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule.two .schedule-tab ul li.nav-item a.active {
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
   position: relative;
 }
@@ -1569,7 +1570,7 @@ select.form-control:not([size]):not([multiple]) {
   height: 0;
   border-style: solid;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #ff6600;
+  border-color: transparent transparent transparent #FBB31A;
 }
 
 @media (max-width: 991px) {
@@ -1656,13 +1657,13 @@ select.form-control:not([size]):not([multiple]) {
 
 .schedule.two .schedule-contents .schedule-item li.headings {
   padding: 25px 0;
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 .schedule.two .schedule-contents .schedule-item li.headings div {
   color: #fff;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .schedule.two .schedule-contents .schedule-item li.schedule-details:not(:last-child) {
@@ -1681,7 +1682,7 @@ select.form-control:not([size]):not([multiple]) {
   padding-top: 25px;
   padding-bottom: 25px;
   color: #222222;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .schedule.two .schedule-contents .schedule-item li.schedule-details .block div i {
@@ -1723,7 +1724,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule.two .schedule-contents .schedule-item li.schedule-details .block:hover span.name {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .ticket-feature {
@@ -1765,7 +1766,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .ticket-feature .block .timer .syotimer-cell .syotimer-cell__value {
   min-width: 80px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   font-size: 35px;
   height: 100px;
   width: 100px;
@@ -1793,14 +1794,14 @@ select.form-control:not([size]):not([multiple]) {
   text-transform: lowercase;
   font-weight: normal;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .ticket-feature .block-2 {
   position: relative;
   padding: 150px 10%;
   height: 100%;
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 .ticket-feature .block-2 [class*=col-]:first-child {
@@ -1846,7 +1847,7 @@ select.form-control:not([size]):not([multiple]) {
   height: 0;
   border-style: solid;
   border-width: 0 0 1000px 300px;
-  border-color: transparent transparent #ff6600 transparent;
+  border-color: transparent transparent #FBB31A transparent;
 }
 
 @media (max-width: 767px) {
@@ -1973,7 +1974,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .pricing .pricing-item .pricing-body ul.feature-list li p span.available {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .pricing .pricing-item .pricing-body ul.feature-list li p span.unavailable {
@@ -1994,8 +1995,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .pricing .pricing-item.featured .pricing-heading {
-  background: #ff6600;
-  border-bottom: 1px solid #ff6600;
+  background: #FBB31A;
+  border-bottom: 1px solid #FBB31A;
 }
 
 .pricing .pricing-item.featured .pricing-heading .title h6 {
@@ -2062,11 +2063,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .pricing.two .pricing-item .pricing-body ul.feature-list li p span.available {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .pricing.two .pricing-item.featured .pricing-heading:before {
-  border-color: #ff6600 transparent transparent transparent;
+  border-color: #FBB31A transparent transparent transparent;
 }
 
 .sponsors {
@@ -2079,7 +2080,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .sponsors .sponsor-title h5 {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .sponsors .block {
@@ -2105,7 +2106,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .sponsors .block .image-block:hover {
-  border: 1px solid #ff6600;
+  border: 1px solid #FBB31A;
 }
 
 .sponsors .sponsor-btn {
@@ -2127,7 +2128,7 @@ select.form-control:not([size]):not([multiple]) {
   padding: 45px 50px 50px 50px;
   top: 80px;
   left: 10%;
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 @media (max-width: 480px) {
@@ -2229,7 +2230,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .feature .testimonial p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   margin-bottom: 10px;
   font-style: italic;
   color: #242424;
@@ -2326,7 +2327,7 @@ select.form-control:not([size]):not([multiple]) {
 .video-promo .content-block a i.video {
   height: 125px;
   width: 125px;
-  background: #ff6600;
+  background: #FBB31A;
   display: inline-block;
   font-size: 40px;
   color: #fff;
@@ -2377,7 +2378,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .testimonial .testimonial-slider .item .block p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   font-style: italic;
   color: #888888;
 }
@@ -2389,11 +2390,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .testimonial .testimonial-slider .owl-dots .owl-dot:hover span {
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 .testimonial .testimonial-slider .owl-dots .owl-dot.active span {
-  background: #ff6600;
+  background: #FBB31A;
 }
 
 .single-speaker .block {
@@ -2422,7 +2423,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .single-speaker .block .content-block .profession p {
-  color: #ff6600;
+  color: #FBB31A;
   font-size: 0.9375rem;
 }
 
@@ -2457,8 +2458,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .single-speaker .block .content-block .social-profiles ul.social-list li a:hover {
-  background: #ff6600;
-  border: 1px solid #ff6600;
+  background: #FBB31A;
+  border: 1px solid #FBB31A;
   color: #fff;
 }
 
@@ -2501,7 +2502,7 @@ select.form-control:not([size]):not([multiple]) {
   left: -25px;
   content: "\f10c";
   font-family: FontAwesome;
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .single-speaker .block-2 .skills .skill-bar {
@@ -2518,11 +2519,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .single-speaker .block-2 .skills .skill-bar .progress .progress-bar {
-  background-color: #ff6600;
+  background-color: #FBB31A;
 }
 
 .single-speaker .block-2 .skills .skill-bar .progress .progress-bar span {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   float: right;
   margin-top: -20px;
   color: #222222;
@@ -2548,7 +2549,7 @@ select.form-control:not([size]):not([multiple]) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ff6600;
+  background: #FBB31A;
   opacity: .85;
   transition: .3s ease;
 }
@@ -2558,7 +2559,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .speakers-full-width .speaker-slider .speaker-image .primary-overlay h5, .speakers-full-width .speaker-slider .speaker-image .primary-overlay p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   font-weight: 400;
 }
 
@@ -2617,11 +2618,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .speakers-full-width .speaker-slider .slick-prev:hover:before, .speakers-full-width .speaker-slider .slick-next:hover:before {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .speakers-full-width .speaker-slider .slick-prev:before, .speakers-full-width .speaker-slider .slick-next:before {
-  color: #ff6600;
+  color: #FBB31A;
   font-family: FontAwesome;
 }
 
@@ -2636,7 +2637,7 @@ select.form-control:not([size]):not([multiple]) {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   margin-right: 25px;
 }
 
@@ -2645,11 +2646,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .controls .control:hover {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .mixitup-control-active {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 /* Container
@@ -2687,7 +2688,7 @@ select.form-control:not([size]):not([multiple]) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ff6600;
+  background: #FBB31A;
   opacity: 0;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
@@ -2778,7 +2779,7 @@ select.form-control:not([size]):not([multiple]) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ff6600;
+  background: #FBB31A;
   opacity: 0;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
@@ -2838,7 +2839,7 @@ select.form-control:not([size]):not([multiple]) {
   width: 65px;
   height: 65px;
   text-align: center;
-  background: #ff6600;
+  background: #FBB31A;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2877,7 +2878,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .news .blog-post .post-content .post-title h2 a:hover {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .news .blog-post .post-content .post-meta ul {
@@ -2926,7 +2927,7 @@ select.form-control:not([size]):not([multiple]) {
 .news .blog-post.single .post-details .quotes {
   background: #f5f5f8;
   padding: 30px;
-  border-left: 3px solid #ff6600;
+  border-left: 3px solid #FBB31A;
   margin: 15px 0;
 }
 
@@ -2976,7 +2977,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .news .blog-post.single .post-details .share-block .tag p, .news .blog-post.single .post-details .share-block .tag ul {
   display: inline;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .news .blog-post.single .post-details .share-block .tag p {
@@ -2989,7 +2990,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .news .blog-post.single .post-details .share-block .tag ul li a:hover {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .news .blog-post.single .post-details .share-block .share {
@@ -3011,7 +3012,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .news .blog-post.single .post-details .share-block .share p, .news .blog-post.single .post-details .share-block .share ul {
   display: inline;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
 }
 
 .news .blog-post.single .post-details .share-block .share p {
@@ -3040,8 +3041,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .news .blog-post.single .post-details .share-block .share ul.social-links-share li a:hover {
-  background: #ff6600;
-  border-color: #ff6600;
+  background: #FBB31A;
+  border-color: #FBB31A;
 }
 
 .news .blog-post.single .post-details .share-block .share ul.social-links-share li a:hover i {
@@ -3092,7 +3093,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .news .comments .comment .media-body ul li a {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .news .comment-form h5 {
@@ -3127,15 +3128,15 @@ ul.pagination li a {
 }
 
 ul.pagination li a:hover, ul.pagination li a:focus {
-  background-color: #ff6600 !important;
+  background-color: #FBB31A !important;
   color: #fff !important;
-  border-color: #ff6600 !important;
+  border-color: #FBB31A !important;
 }
 
 ul.pagination .active a {
-  background-color: #ff6600 !important;
+  background-color: #FBB31A !important;
   color: #fff !important;
-  border-color: #ff6600 !important;
+  border-color: #FBB31A !important;
 }
 
 .sidebar {
@@ -3162,7 +3163,7 @@ ul.pagination .active a {
 }
 
 .widget.search .input-group .input-group-addon {
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
   border: none;
   border-radius: 0;
@@ -3188,7 +3189,7 @@ ul.pagination .active a {
 }
 
 .widget.category ul.category-list li a:hover {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .widget.category ul.category-list li:last-child {
@@ -3204,9 +3205,9 @@ ul.pagination .active a {
 }
 
 .widget.tags ul li a:hover {
-  background: #ff6600;
+  background: #FBB31A;
   color: #fff;
-  border-color: #ff6600;
+  border-color: #FBB31A;
 }
 
 .widget.latest-post .media {
@@ -3229,7 +3230,7 @@ ul.pagination .active a {
 }
 
 .widget.latest-post .media .media-body h6 a:hover {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .widget.latest-post .media .media-body p span {
@@ -3280,7 +3281,7 @@ ul.pagination .active a {
   left: 0;
   top: 37px;
   content: "";
-  background: #ff6600;
+  background: #FBB31A;
   width: 30px;
   height: 2px;
 }
@@ -3294,7 +3295,7 @@ ul.pagination .active a {
   width: 65px;
   height: 65px;
   text-align: center;
-  background: #ff6600;
+  background: #FBB31A;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3323,7 +3324,7 @@ ul.pagination .active a {
 }
 
 .news-hr .news-post-hr .post-contents .more a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   color: #222222;
   text-transform: uppercase;
   font-size: 14px;
@@ -3393,8 +3394,8 @@ ul.pagination .active a {
 }
 
 .testimonial .testimonial-item .comment:hover {
-  background: #ff6600;
-  border: 1px solid #ff6600;
+  background: #FBB31A;
+  border: 1px solid #FBB31A;
 }
 
 .testimonial .testimonial-item .comment:hover p {
@@ -3402,11 +3403,11 @@ ul.pagination .active a {
 }
 
 .testimonial .testimonial-item .comment:hover:before {
-  border-color: transparent #ff6600 transparent transparent;
+  border-color: transparent #FBB31A transparent transparent;
 }
 
 .testimonial .testimonial-item .comment:hover:after {
-  border-color: transparent #ff6600 transparent transparent;
+  border-color: transparent #FBB31A transparent transparent;
 }
 
 .testimonial .testimonial-item .media {
@@ -3427,13 +3428,13 @@ ul.pagination .active a {
 }
 
 .testimonial .testimonial-item .media .media-body .name p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Alice", sans-serif;
   color: #222222;
 }
 
 .testimonial .testimonial-item .media .media-body .profession p {
   font-size: 0.8126rem;
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .error .block {
@@ -3447,7 +3448,7 @@ ul.pagination .active a {
 
 .error .block h3 {
   font-weight: 400;
-  color: #ff6600;
+  color: #FBB31A;
   margin-bottom: 40px;
 }
 
@@ -3483,7 +3484,7 @@ ul.pagination .active a {
 }
 
 .faq .accordion-block #accordion .card .collapse.show + .card-header h5 a, .faq .accordion-block #accordionTwo .card .collapse.show + .card-header h5 a {
-  color: #ff6600;
+  color: #FBB31A;
 }
 
 .contact-form .form-control {
