@@ -83,6 +83,7 @@ celerybeat-schedule
 
 # Environments
 wagtail_env/
+moygdk_env/
 .env
 .venv
 env/
