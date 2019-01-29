@@ -16,6 +16,8 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'dnx1s^l^q1)$$t2r3x29l&1x%y)b78%q6_*@bhq)yyoz5-hnqr'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
