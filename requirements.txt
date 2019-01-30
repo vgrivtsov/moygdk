@@ -54,7 +54,7 @@ matplotlib==2.2.3
 mistune==0.8.3
 nbconvert==5.4.0
 nbformat==4.4.0
-notebook==5.6.0
+notebook>=5.7.1
 numpy==1.15.1
 pandas==0.23.4
 pandocfilters==1.4.2
@@ -73,7 +73,7 @@ pyparsing==2.2.0
 python-dateutil==2.7.5
 python-docx==0.8.7
 pytz==2018.9
-PyYAML==3.13
+PyYAML>=4.2b1
 pyzmq==17.1.2
 qtconsole==4.4.1
 raven==6.9.0
