@@ -13,11 +13,11 @@
   		<div class="row">
   			<div class="col-lg-12">
   				<!-- Content Block -->
-  				<div class="container">
+  				<div class="container" >
   					<!-- Coundown Timer -->
   					<!-- <div class="timer"></div> -->
-  					<!-- <h1>{{ page.title }}</h1>
-  					<h4>{{ page.hero_text }}</h4> -->
+  					<!-- <h1 style="color:#ff6600;">{{ page.title }}</h1>
+  					<h4 style="color:#ff6600;">{{ page.hero_text }}</h4> -->
   				</div>
   			</div>
   		</div>
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		<div class="row">
-      {% for childpage in page.featured_section_2.specific.children|slice:"5" %}
+      {% for childpage in page.featured_section_2.specific.children|slice:"8" %}
         {% if childpage.event_date > nowtime %}
 			    <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
 			    	<div class="speaker-item">
@@ -221,7 +221,7 @@
 				<div class="blog-post">
 					<div class="post-thumb">
             <a href="{{childpage.url}}">
-              {% image childpage.image fill-350x254-c100 %}
+              {% image childpage.image fill-350x250-c100 %}
 						 <img src="{{ childpage.image.url }}" width="{{ childpage.image.width }}" height="{{ childpage.image.height }}" alt="{{ childpage.image.alt }}" class="img-fluid" />
 						</a>
 					</div>
