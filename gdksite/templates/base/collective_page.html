@@ -6,12 +6,14 @@
 	<div class="container">
 		<div class="block">
 			<div class="row">
+				{% if page.image %}
 				<div class="col-lg-5 col-md-6">
           {% image page.image fill-457x480-c0 as image %}
 					<div class="image-block">
             <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" class="img-fluid" alt="speaker"/>
 					</div>
 				</div>
+
 				<div class="col-lg-7 col-md-6 align-self-center">
 					<div class="content-block">
 						<div class="name">
@@ -23,7 +25,7 @@
 						<div class="details">
 							<p>{{page.body}}</p>
 						</div>
-						<div class="social-profiles">
+						<!-- <div class="social-profiles">
 							<h5>В соцсетях:</h5>
 							<ul class="list-inline social-list">
 								<li class="list-inline-item">
@@ -42,9 +44,54 @@
 									<a href="#"><i class="fa fa-pinterest-p"></i></a>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
+
+       {% else %}
+
+			 <div class="col align-self-center">
+				 <div class="content-block">
+					 <div class="name">
+						 <h3>{{page.title}}</h3>
+					 </div>
+					 <div class="profession">
+						 <p>{{page.subtitle}}</p>
+					 </div>
+					 <div class="details">
+						 <p>{{page.body}}</p>
+					 </div>
+					 <!-- <div class="social-profiles">
+						 <h5>В соцсетях:</h5>
+						 <ul class="list-inline social-list">
+							 <li class="list-inline-item">
+								 <a href="#"><i class="fa fa-vk"></i></a>
+							 </li>
+							 <li class="list-inline-item">
+								 <a href="#"><i class="fa fa-odnoklassniki"></i></a>
+							 </li>
+							 <li class="list-inline-item">
+								 <a href="#"><i class="fa fa-facebook"></i></a>
+							 </li>
+							 <li class="list-inline-item">
+								 <a href="#"><i class="fa fa-instagram"></i></a>
+							 </li>
+							 <li class="list-inline-item">
+								 <a href="#"><i class="fa fa-pinterest-p"></i></a>
+							 </li>
+						 </ul>
+					 </div> -->
+				 </div>
+			 </div>
+
+
+
+       {% endif %}
+
+
+
+
+
 			</div>
 		</div>
 	</div>
