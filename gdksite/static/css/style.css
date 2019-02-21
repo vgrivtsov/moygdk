@@ -95,6 +95,11 @@ ul.social-links li a i {
 }
 
 
+.standardpage img {
+    display:block;
+    margin:auto;
+}
+
 /* Logo */
 .logo, .logo:visited, .logo:focus {
   display: inline-block;
