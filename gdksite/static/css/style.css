@@ -2156,7 +2156,7 @@ select.form-control:not([size]):not([multiple]) {
   background: #ff6600;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 480px) {
   .map .address-block {
     display:none;
   }
