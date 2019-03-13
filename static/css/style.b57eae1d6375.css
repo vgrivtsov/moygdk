@@ -156,7 +156,7 @@ ul.social-links li a i {
 
 .overlay:before {
   content: '';
-  /* background: url(../images/background/objects.png) no-repeat; */
+  /* background: url("../images/background/objects.0d39a30cf71f.png") no-repeat; */
   /* position: absolute; */
   top: 0;
   left: 0;
@@ -275,74 +275,74 @@ button:hover {
 }
 
 .bg-banner-one {
-  background: url(../images/background/lustra.jpg) no-repeat;
+  background: url("../images/background/lustra.5253264fb74f.jpg") no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .bg-banner-two {
-  background: url(../images/background/banner-bg-two.jpg) no-repeat;
+  background: url("../images/background/banner-bg-two.acb1807bf64c.jpg") no-repeat;
   background-size: cover;
   background-position: right center;
 }
 
 .bg-about {
-  background: url(../images/background/pattern-background.jpg) no-repeat;
+  background: url("../images/background/pattern-background.220ebe256238.jpg") no-repeat;
   background-size: cover;
 }
 
 .bg-speaker {
-  background: url(../images/background/spaeker-background.jpg) fixed no-repeat;
+  background: url("../images/background/spaeker-background.4baf8294055e.jpg") fixed no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .bg-timer {
-  background: url(../images/background/timer-bg.jpg) no-repeat;
+  background: url("../images/background/timer-bg.d958c99101d1.jpg") no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .bg-schedule {
-  background: url(../images/background/schedule-bg.png) no-repeat;
+  background: url("../images/background/schedule-bg.dbad7ef6176a.png") no-repeat;
   background-size: cover;
 }
 
 .bg-service {
-  background: url(../images/background/feature-background.jpg) no-repeat;
+  background: url("../images/background/feature-background.ed9c98ba7742.jpg") no-repeat;
   background-size: cover;
 }
 
 .bg-registration {
-  background: url(../images/background/registration-background.jpg) no-repeat;
+  background: url("../images/background/registration-background.cf49bb6eba18.jpg") no-repeat;
   background-size: cover;
 }
 
 .bg-registration-two {
-  background: url(../images/background/bg-registration-two.jpg) no-repeat;
+  background: url("../images/background/bg-registration-two.d093560233a9.jpg") no-repeat;
   background-size: cover;
 }
 
 .bg-ticket {
-  background: url(../images/background/cta-ticket-bg.jpg) fixed no-repeat;
+  background: url("../images/background/cta-ticket-bg.b95d01f002c8.jpg") fixed no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .bg-sponsors {
-  background: url(../images/background/sponsors-bg.jpg) fixed no-repeat;
+  background: url("../images/background/sponsors-bg.50b4f15e88e4.jpg") fixed no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .bg-subscribe {
-  background: url(../images/background/newsletter-bg.jpg) fixed no-repeat;
+  background: url("../images/background/newsletter-bg.308ac99677a7.jpg") fixed no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .bg-title {
-  background: url(../images/background/page-title-bg.jpg) no-repeat;
+  background: url("../images/background/page-title-bg.d2a3e8377364.jpg") no-repeat;
   background-size: cover;
   background-position: center center;
 }
