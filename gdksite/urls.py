@@ -9,6 +9,12 @@ from wagtail.core import urls as wagtail_urls
 
 from gdksite.search import views as search_views
 from .api import api_router
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic import TemplateView
+from django.views.generic.base import RedirectView
+
+
 
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
