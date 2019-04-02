@@ -26,6 +26,7 @@ urlpatterns = [
 
     url('^sitemap\.xml$', sitemap),
     url(r'^api/v2/', api_router.urls),
+    url(r'^anketa/$', TemplateView.as_view(template_name='anketa.html')),
 ]
 
 
@@ -50,11 +51,9 @@ if settings.DEBUG:
     urlpatterns += [
         url(r'^test404/$', TemplateView.as_view(template_name='404.html')),
         url(r'^test500/$', TemplateView.as_view(template_name='500.html')),
-        url(r'^anketa/$', TemplateView.as_view(template_name='anketa.html')),
     ]
 
 urlpatterns += [
     url(r'', include(wagtail_urls)),
-    url(r'^anketa/$', TemplateView.as_view(template_name='anketa.html')),
 
 ]
