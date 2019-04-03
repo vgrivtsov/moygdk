@@ -2857,6 +2857,14 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
+@media (max-width: 767px) {
+  .block-paragraph_block .rich-text  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
 .news .blog-post .post-content {
   position: relative;
   padding: 30px 30px 25px 30px;
