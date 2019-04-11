@@ -7,7 +7,7 @@
     =            Events List           =
     =================================-->
 
-    <section class="news section">
+    <section class="events section">
     	<div class="container">
     		<div class="row mt-30">
           {% if events %}
@@ -20,7 +20,7 @@
     							<div class="blog-post">
     								<div class="post-thumb">
     									<a href="{% pageurl event %}">
-                        {% image event.image fill-370x235-c0 as image %}
+                        {% image event.image fill-370x523-c0 as image %}
                          <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" class="img-fluid" />
     									</a>
     								</div>
@@ -29,7 +29,7 @@
     										<h4>{{ event.event_date|date:"d" }}<span>{{ event.event_date|date:"N" }}</span></h4>
     									</div>
     									<div class="post-title">
-    										<h2><a href="{% pageurl event %}">{{ event.title }}</a></h2>
+    										<h2><a href="{% pageurl event %}">{{ event.title|truncatechars:24 }}</a></h2>
     									</div>
     									<div class="post-meta  d-flex align-items-stretch">
     										<ul class="list-inline">
