@@ -196,16 +196,16 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text='Homepage image'
+        help_text='Картинка главной страницы'
     )
     hero_text = models.CharField(
         max_length=255,
-        help_text='Write an introduction'
+        help_text='Текст на картинке'
         )
     hero_cta = models.CharField(
-        verbose_name='Hero CTA',
+        verbose_name='Подтекст на картинке',
         max_length=255,
-        help_text='Text to display on Call to Action'
+        help_text='Подтекст на картинке'
         )
     hero_cta_link = models.ForeignKey(
         'wagtailcore.Page',
@@ -213,8 +213,8 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name='Hero CTA link',
-        help_text='Choose a page to link to for the Call to Action'
+        verbose_name='Линк на промо страницу',
+        help_text='Линк на промо страницу'
     )
 
     # Body section of the HomePage
@@ -229,18 +229,18 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text='Promo image'
+        help_text='Картинка промоблока'
     )
     promo_title = models.CharField(
         null=True,
         blank=True,
         max_length=255,
-        help_text='Title to display above the promo copy'
+        help_text='Заголовок промо'
     )
     promo_text = RichTextField(
         null=True,
         blank=True,
-        help_text='Write some promotional copy'
+        help_text='Текст промо'
     )
 
     # Featured sections on the HomePage
@@ -252,7 +252,7 @@ class HomePage(Page):
         null=True,
         blank=True,
         max_length=255,
-        help_text='Title to display above the promo copy'
+        help_text='Заголовок Секция 1'
     )
     featured_section_1 = models.ForeignKey(
         'wagtailcore.Page',
@@ -260,16 +260,15 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text='First featured section for the homepage. Will display up to '
-        'three child items.',
-        verbose_name='Featured section 1'
+        help_text='',
+        verbose_name='Секция 1'
     )
 
     featured_section_2_title = models.CharField(
         null=True,
         blank=True,
         max_length=255,
-        help_text='Title to display above the promo copy'
+        help_text='Заголовок Секция 2'
     )
     featured_section_2 = models.ForeignKey(
         'wagtailcore.Page',
@@ -277,16 +276,15 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text='Second featured section for the homepage. Will display up to '
-        'three child items.',
-        verbose_name='Featured section 2'
+        help_text='',
+        verbose_name='Секция 2'
     )
 
     featured_section_3_title = models.CharField(
         null=True,
         blank=True,
         max_length=255,
-        help_text='Title to display above the promo copy'
+        help_text='Заголовок Секция 3'
     )
     featured_section_3 = models.ForeignKey(
         'wagtailcore.Page',
@@ -294,9 +292,8 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text='Third featured section for the homepage. Will display up to '
-        'six child items.',
-        verbose_name='Featured section 3'
+        help_text='',
+        verbose_name='Секция 3'
     )
 
     content_panels = Page.content_panels + [
@@ -327,7 +324,7 @@ class HomePage(Page):
                 FieldPanel('featured_section_3_title'),
                 PageChooserPanel('featured_section_3'),
                 ])
-        ], heading="Featured homepage sections", classname="collapsible")
+        ], heading="Секции главной страницы", classname="collapsible")
     ]
 
     def __str__(self):
@@ -336,6 +333,12 @@ class HomePage(Page):
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
         context['nowtime'] = datetime.now().date()
+        excludeset = ['Root', 'Документы']
+        collection_contents = Collection.objects.all().exclude(name__in=excludeset).order_by('?').first()
+        print(collection_contents)
+
+        if collection_contents:
+            context['collection_contents'] = collection_contents
 
         return context
 
