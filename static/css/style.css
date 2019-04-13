@@ -275,7 +275,7 @@ button:hover {
 }
 
 .bg-banner-one {
-  background: url(../images/background/lustra.jpg) no-repeat;
+  background: url(../images/background/homepage-one-banner.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
 }
@@ -2857,6 +2857,14 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
+@media (max-width: 767px) {
+  .block-paragraph_block .rich-text  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
 .news .blog-post .post-content {
   position: relative;
   padding: 30px 30px 25px 30px;
@@ -3848,5 +3856,12 @@ ul.pagination .active a {
 
 }
 
+@media (max-width: 767px) {
+  .richtext-image img {
+    max-width: 100%;
+    max-height: auto;
+  }
+}
 
 /*# sourceMappingURL=maps/style.css.map */
+
