@@ -105,3 +105,4 @@ temp/
 # mypy
 .mypy_cache/
 gdksite/settings/
+media

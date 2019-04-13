@@ -70,7 +70,7 @@
     						<h5 class="widget-header">Прошедшие события</h5>
     						<!-- Events -->
                 {% if events %}
-                {% for event in events %}
+                {% for event in events.reverse|slice:"10" %}
                 {% if event.event_date < nowtime %}
     						<div class="media">
                   <a href="{% pageurl event %}">
