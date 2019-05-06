@@ -2976,7 +2976,10 @@ select.form-control:not([size]):not([multiple]) {
 
 .news .blog-post.single .post-details p {
   padding: 13px 0;
-  font-size: 1.275rem;
+  font-size: 17px;
+  letter-spacing: 0.666667px;
+  line-height: 24.2833px;
+
   font-family: "Merriweather", sans-serif;
 
 }
