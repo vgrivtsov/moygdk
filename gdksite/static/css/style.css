@@ -2864,6 +2864,11 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
+.news .blog-post .post-content .rich-text  img {
+    width: 100%;
+    height: auto;
+  }
+
 
 .news .blog-post .post-content {
   position: relative;
