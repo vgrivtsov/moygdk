@@ -2465,7 +2465,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .single-speaker .block .content-block .details p {
   font-size: 1.275rem;
-  font-family: "Alice", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .single-speaker .block .content-block .details p:not(:last-child) {
@@ -3864,4 +3864,3 @@ ul.pagination .active a {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
-
