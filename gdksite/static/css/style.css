@@ -1201,11 +1201,11 @@ select.form-control:not([size]):not([multiple]) {
 .speakers .speaker-item {
   background: #eae9ec;
   padding: 7px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .speakers .speaker-item .image {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   position: relative;
   overflow: hidden;
 }
