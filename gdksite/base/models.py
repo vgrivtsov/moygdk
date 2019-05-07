@@ -38,9 +38,9 @@ class People(index.Indexed, ClusterableModel):
     to the database.
     https://github.com/wagtail/django-modelcluster
     """
-    first_name = models.CharField("First name", max_length=254)
-    last_name = models.CharField("Last name", max_length=254)
-    job_title = models.CharField("Job title", max_length=254)
+    first_name = models.CharField("Имя", max_length=254)
+    last_name = models.CharField("Фамилия", max_length=254)
+    job_title = models.CharField("Должность", max_length=254)
 
     image = models.ForeignKey(
         'wagtailimages.Image',

@@ -42,6 +42,7 @@ class EventPage(Page):
     """
     introduction = models.TextField(
         help_text='Text to describe the page',
+        verbose_name="Место проведения",
         blank=True)
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -49,23 +50,24 @@ class EventPage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text='Landscape mode only; horizontal width between 1000px and 3000px.'
+        help_text='Landscape mode only; horizontal width between 1000px and 3000px.',
+        verbose_name="Картинка",
     )
     body = StreamField(
-        BaseStreamBlock(), verbose_name="Page body",
+        BaseStreamBlock(), verbose_name="Основное описание",
                            blank=True, null=True
     )
-    subtitle = models.CharField(blank=True, max_length=255)
+    subtitle = models.CharField(blank=True, max_length=255, verbose_name="Краткое описание")
     tags = ClusterTaggableManager(through=EventPageTag, blank=True)
-    age_policy = models.PositiveIntegerField(
+    age_policy = models.PositiveIntegerField(verbose_name="Возрастное ограничение",
                                              default=3,
                                              validators=[
                                                      MaxValueValidator(18),
-                                                     MinValueValidator(1)
+                                                     MinValueValidator(0)
                                                      ]
     )
-    event_date = models.DateField(auto_now_add=False, null=True)
-    event_time = models.TimeField(auto_now_add=False, null=True)
+    event_date = models.DateField(auto_now_add=False, null=True, verbose_name="Дата проведения мероприятия")
+    event_time = models.TimeField(auto_now_add=False, null=True, verbose_name="Время проведения мероприятия")
 
     content_panels = Page.content_panels + [
         FieldPanel('subtitle', classname="full"),
