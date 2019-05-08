@@ -1201,11 +1201,11 @@ select.form-control:not([size]):not([multiple]) {
 .speakers .speaker-item {
   background: #eae9ec;
   padding: 7px;
-  /* margin-bottom: 30px; */
+  margin-bottom: 30px;
 }
 
 .speakers .speaker-item .image {
-  /* margin-bottom: 16px; */
+  margin-bottom: 16px;
   position: relative;
   overflow: hidden;
 }
@@ -2876,6 +2876,8 @@ select.form-control:not([size]):not([multiple]) {
   border-width: 0 1px 1px 1px;
   border-style: solid;
   border-color: #e5e5e5;
+  /* min-height: 150px; */
+  
 }
 
 .news .blog-post .post-content .date {
