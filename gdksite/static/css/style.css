@@ -2876,8 +2876,6 @@ select.form-control:not([size]):not([multiple]) {
   border-width: 0 1px 1px 1px;
   border-style: solid;
   border-color: #e5e5e5;
-  /* min-height: 150px; */
-  
 }
 
 .news .blog-post .post-content .date {
