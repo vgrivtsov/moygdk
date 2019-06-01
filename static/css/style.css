@@ -70,7 +70,7 @@ h6 {
 p, a, li, blockquote, label {
   font-size: 1rem;
   line-height: 26px;
-  color: #848484;
+  /* color: #848484; */
   margin-bottom: 0;
 }
 
@@ -2465,7 +2465,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .single-speaker .block .content-block .details p {
   font-size: 1.275rem;
-  font-family: "Alice", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .single-speaker .block .content-block .details p:not(:last-child) {
@@ -2864,6 +2864,11 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
+.news .blog-post .post-content .rich-text  img {
+    width: 100%;
+    height: auto;
+  }
+
 
 .news .blog-post .post-content {
   position: relative;
@@ -2971,7 +2976,12 @@ select.form-control:not([size]):not([multiple]) {
 
 .news .blog-post.single .post-details p {
   padding: 13px 0;
-  font-size: 1.275rem;
+  font-size: 17px;
+  letter-spacing: 0.666667px;
+  line-height: 24.2833px;
+
+  font-family: "Merriweather", sans-serif;
+
 }
 
 .news .blog-post.single .post-details .quotes {
@@ -3864,4 +3874,3 @@ ul.pagination .active a {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
-
