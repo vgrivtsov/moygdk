@@ -69,8 +69,7 @@
     					<div class="widget latest-post">
     						<h5 class="widget-header">Прошедшие события</h5>
     						<!-- Events -->
-                {% if events %}
-                {% for event in events.reverse|slice:"10" %}
+                {% for event in events.reverse|slice:"30" %}
                 {% if event.event_date < nowtime %}
     						<div class="media">
                   <a href="{% pageurl event %}">
@@ -84,7 +83,6 @@
     						</div>
                 {% endif %}
                 {% endfor %}
-                {% endif %}
     					</div>
               <!-- Popular Tag Widget -->
               {% if page.get_child_tags %}
