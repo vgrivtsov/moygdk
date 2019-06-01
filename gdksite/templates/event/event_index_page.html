@@ -15,7 +15,7 @@
     				<div class="block">
     					<div class="row">
                   {% for event in events %}
-                  {% if event.event_date > nowtime %}
+                  {% if event.event_date >= nowtime %}
     						<div class="col-md-6 col-sm-8 col-10 m-auto d-flex align-items-stretch">
     							<div class="blog-post">
     								<div class="post-thumb">

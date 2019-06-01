@@ -84,7 +84,7 @@
 		</div>
 		<div class="row">
       {% for childpage in page.featured_section_2.specific.children.reverse|dictsort:"event_date" %}
-        {% if childpage.event_date > nowtime %}
+        {% if childpage.event_date >= nowtime %}
 			    <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
 			    	<div class="speaker-item">
 			    		<div class="image">
