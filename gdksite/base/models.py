@@ -333,7 +333,7 @@ class HomePage(Page):
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
         context['nowtime'] = datetime.now().date()
-        excludeset = ['Root', 'Документы']
+        excludeset = ['Root', 'Документы', 'Команда']
         collection_contents = Collection.objects.all().exclude(name__in=excludeset).order_by('?').first()
         print(collection_contents)
 

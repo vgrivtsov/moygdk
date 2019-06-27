@@ -49,7 +49,7 @@
           $('html, body').animate({ scrollTop: 0 }, 'slow');
           return false;
         });
-        
+
         // -----------------------------
         // Magnific Popup
         // -----------------------------
@@ -77,6 +77,10 @@
         if (containerEl) {
             mixer = mixitup(containerEl);
         }
+    });
+    // align cards for news index page
+    $(document).ready(function() {
+        $('.post-content').matchHeight(false);
     });
 
 })(jQuery);
