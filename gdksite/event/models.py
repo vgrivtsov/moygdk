@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 from django.contrib import messages
 from django.db import models
 from django.shortcuts import redirect, render
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import( MaxValueValidator,
+    MinValueValidator, validate_comma_separated_integer_list)
 
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
@@ -30,6 +31,25 @@ class EventPageTag(TaggedItemBase):
     http://docs.wagtail.io/en/latest/reference/pages/model_recipes.html#tagging
     """
     content_object = ParentalKey('EventPage', related_name='tagged_items', on_delete=models.CASCADE)
+
+
+class EventSponsorRelationship(Orderable, models.Model):
+    """
+    This defines the relationship between the `Sponsor` within the `base`
+    app and the EventPage below. This allows Sponsor to be added to a EventPage.
+
+    We have created a two way relationship between EventPage and Sponsor using
+    the ParentalKey and ForeignKey
+    """
+    page = ParentalKey(
+        'EventPage', related_name='event_sponsor_relationship', on_delete=models.CASCADE
+    )
+    sponsors = models.ForeignKey(
+        'base.Sponsor', related_name='sponsor_event_relationship', on_delete=models.CASCADE
+    )
+    panels = [
+        SnippetChooserPanel('sponsors')
+    ]
 
 
 class EventPage(Page):
@@ -68,6 +88,7 @@ class EventPage(Page):
     )
     event_date = models.DateField(auto_now_add=False, null=True, verbose_name="Дата проведения мероприятия")
     event_time = models.TimeField(auto_now_add=False, null=True, verbose_name="Время проведения мероприятия")
+    sponsors_list = models.CharField(blank=True, max_length=255, validators=[validate_comma_separated_integer_list])
 
     content_panels = Page.content_panels + [
         FieldPanel('subtitle', classname="full"),
@@ -77,6 +98,9 @@ class EventPage(Page):
         FieldPanel('event_date'),
         FieldPanel('event_time'),
         FieldPanel('age_policy'),
+        InlinePanel(
+            'event_sponsor_relationship', label="Спонсор(ы)",
+            panels=None, min_num=1),
         FieldPanel('tags'),
     ]
 
@@ -84,6 +108,13 @@ class EventPage(Page):
         index.SearchField('body'),
     ]
 
+    def sponsors(self):
+
+        sponsors = [
+            n.sponsors for n in self.event_sponsor_relationship.all()
+        ]
+
+        return sponsors
 
     @property
     def get_tags(self):

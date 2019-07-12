@@ -13,7 +13,7 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
-
+from gdksite.base.sponsors import SponsorsView
 
 
 urlpatterns = [
@@ -27,6 +27,7 @@ urlpatterns = [
     url('^sitemap\.xml$', sitemap),
     url(r'^api/v2/', api_router.urls),
     url(r'^anketa/$', TemplateView.as_view(template_name='anketa.html')),
+    url(r'^sponsors/$', SponsorsView.as_view(), name='sponsors'),
 ]
 
 

@@ -19,6 +19,7 @@ from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
+from ..event.models import EventPage
 
 from .blocks import BaseStreamBlock
 
@@ -79,8 +80,80 @@ class People(index.Indexed, ClusterableModel):
         return '{} {}'.format(self.first_name, self.last_name)
 
     class Meta:
-        verbose_name = 'Person'
-        verbose_name_plural = 'People'
+        verbose_name = 'Автор'
+        verbose_name_plural = 'Авторы'
+
+
+@register_snippet
+class Sponsor(index.Indexed, ClusterableModel):
+
+    name = models.CharField("Название", max_length=254)
+    adress = models.CharField("Адрес", null=True, blank=True, max_length=254)
+    link = models.CharField("Ссылка", null=True, blank=True, max_length=254)
+    category = models.CharField("Категория", null=True, blank=True, max_length=254)
+    description = models.TextField("Краткое описание(254 символа)", null=True, blank=True, max_length=254)
+
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    panels = [
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('name', classname="col6"),
+                FieldPanel('adress', classname="col6"),
+                FieldPanel('category', classname="col6"),
+                FieldPanel('description', classname="col6"),
+            ])
+        ], "Название"),
+        FieldPanel('link'),
+        ImageChooserPanel('image')
+    ]
+
+    search_fields = [
+        index.SearchField('name'),
+        index.SearchField('adress'),
+    ]
+
+    @property
+    def thumb_image(self):
+        # Returns an empty string if there is no profile pic or the rendition
+        # file can't be found.
+        try:
+            return self.image.get_rendition('fill-50x50').img_tag()
+        except:
+            return ''
+
+    def __str__(self):
+        return '{} {}'.format(self.name, self.adress)
+
+    class Meta:
+        verbose_name = 'Спонсор'
+        verbose_name_plural = 'Спонсоры'
+
+
+class FooterText(models.Model):
+    """
+    This provides editable text for the site footer. Again it uses the decorator
+    `register_snippet` to allow it to be accessible via the admin. It is made
+    accessible on the template via a template tag defined in base/templatetags/
+    navigation_tags.py
+    """
+    body = RichTextField()
+
+    panels = [
+        FieldPanel('body'),
+    ]
+
+    def __str__(self):
+        return "Footer text"
+
+    class Meta:
+        verbose_name_plural = 'Footer Text'
 
 
 @register_snippet
@@ -167,8 +240,6 @@ class CollectivePage(Page):
         StreamFieldPanel('body'),
         ImageChooserPanel('image'),
     ]
-
-
 
     def get_context(self, request):
         context = super(CollectivePage, self).get_context(request)

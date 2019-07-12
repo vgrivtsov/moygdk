@@ -3,6 +3,21 @@
 
 {% block content %}
 
+<style>
+.sponsor img {
+    width: auto;
+    max-height: 500px;
+    height: 100%;
+}
+
+.sponsorname {
+  font-size: 20px;
+  color: #222222;
+}
+
+.sponsorname  a {font-size: 20px};
+
+</style>
     <!-- {% image self.image fill-1920x600 as hero_img %} -->
         <!-- {% include "base/include/header-hero.html" %} -->
 
@@ -42,6 +57,18 @@
           						</div>
         							<div class="post-details">
                         {{ page.body }}
+
+                          {% if page.sponsors %}
+                          <hr>
+                          <h5>Спонсоры мероприятия:</h5>
+                              <div class="blog-avatars">
+                                  {% for sponsor in page.sponsors %}
+                                      <div class="sponsor py-3">{% if image %}{% image sponsor.image fill-100x100-c100 class="blog-avatar" %} {% endif %}
+                                        <span class="sponsorname px-3">{% if sponsor.link %} <a href="http://{{ sponsor.link }}">{{ sponsor.name }}</a>{% else %} {{ sponsor.name }} {% endif %} {% if sponsor.category %} <i>{{ sponsor.category }}</i> {% endif %}</span></div>
+                                  {% endfor %}
+                              </div>
+                          {% endif %}
+
         								<div class="share-block">
         									<div class="tag">
                             {% if page.get_tags %}
@@ -57,6 +84,7 @@
                             </ul>
                             {% endif %}
         									</div>
+
         									<div class="share">
         										<p>
         											Поделиться:
