@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags navigation_tags wagtailimages_tags %}
+{% load static %}
+
+{% block content %}
+
+{% if sponsors %}
+  {% for s in sponsors %}
+<section class="section single-speaker">
+	<div class="container">
+		<div class="block">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 align-self-md-center">
+          {% if s.image %}
+					<div class="image-block">
+            {% image s.image fill-457x480-c0 as image %}
+            <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}"  alt="{{ image.alt }}" class="img-fluid" />
+						<!-- <img src="images/speakers/single-speaker.jpg" class="img-fluid" alt="speaker"> -->
+					</div>
+          {% endif %}
+				</div>
+				<div class="col-lg-7 col-md-6 align-self-center">
+					<div class="content-block">
+						<div class="name">
+							<h3>{{s.name}}</h3>
+						</div>
+						<div class="profession">
+							<p>{{s.category}}</p>
+						</div>
+						<div class="details">
+							<p>{{s.description}}
+							<br>
+						</div>
+            {% if s.link %}
+						<div class="social-profiles">
+							<h5>Сайт:</h5>
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a href="http://{{s.link}}">{{s.link}}</a>
+								</li>
+							</ul>
+						</div>
+            {% endif %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block-2">
+
+					<div class="personal-info">
+						<h5>Спонсор мероприятий</h5>
+						<ul class="m-0 p-0">
+              {% if s.events %}
+                {% for event in s.events %}
+							    <li><a href="{% pageurl event %}">{{event}}</a></li>
+                {% endfor %}
+              {% endif %}
+						</ul>
+					</div>
+
+		</div>
+	</div>
+</section>
+{% endfor %}
+{% endif %}
+
+
+    {{s.name}} {% if s.link %}{{s.link}}{% endif%}
+
+
+        <!--====  End of Events Posts  ====-->
+{% endblock content %}
