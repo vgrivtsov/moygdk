@@ -20,7 +20,7 @@ from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.core.blocks import IntegerBlock, DateTimeBlock
 
-from gdksite.base.blocks import BaseStreamBlock
+from .base.blocks import BaseStreamBlock
 
 from datetime import datetime
 

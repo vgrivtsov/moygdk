@@ -13,7 +13,7 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
-from gdksite.base.sponsors import SponsorsView
+from .base.sponsors import SponsorsView
 
 
 urlpatterns = [
