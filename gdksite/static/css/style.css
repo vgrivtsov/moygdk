@@ -3179,19 +3179,19 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 @media (max-width: 767px) {
-  .news .blog-post .post-thumb img {
+  .events .blog-post .post-thumb img {
     width: 100%;
   }
 }
 
 @media (max-width: 767px) {
-  .block-paragraph_block .rich-text  img {
+  .events .block-paragraph_block .rich-text  img {
     width: 100%;
     height: auto;
   }
 }
 
-.news .blog-post .post-content .rich-text  img {
+.events .blog-post .post-content .rich-text  img {
     width: 100%;
     height: auto;
   }
