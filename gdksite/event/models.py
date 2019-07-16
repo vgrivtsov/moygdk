@@ -88,7 +88,6 @@ class EventPage(Page):
     )
     event_date = models.DateField(auto_now_add=False, null=True, verbose_name="Дата проведения мероприятия")
     event_time = models.TimeField(auto_now_add=False, null=True, verbose_name="Время проведения мероприятия")
-    sponsors_list = models.CharField(blank=True, max_length=255, validators=[validate_comma_separated_integer_list])
 
     content_panels = Page.content_panels + [
         FieldPanel('subtitle', classname="full"),
@@ -100,7 +99,7 @@ class EventPage(Page):
         FieldPanel('age_policy'),
         InlinePanel(
             'event_sponsor_relationship', label="Спонсор(ы)",
-            panels=None, min_num=1),
+            panels=None),
         FieldPanel('tags'),
     ]
 
