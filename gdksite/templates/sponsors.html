@@ -24,11 +24,17 @@
 						<div class="name">
 							<h3>{{s.name}}</h3>
 						</div>
+            {% if s.category %}
 						<div class="profession">
 							<p>{{s.category}}</p>
 						</div>
+            {% endif %}
 						<div class="details">
 							<p>{{s.description}}
+							<br>
+						</div>
+            <div class="details">
+							<p>{{s.address}}
 							<br>
 						</div>
             {% if s.link %}
