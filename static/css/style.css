@@ -642,6 +642,24 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
+.main-nav .navbar-brand75 {
+  padding:  40px 35px 50px;
+  border-right: none;
+}
+
+@media (max-width: 1024px) {
+  .main-nav .navbar-brand75 {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-nav .navbar-brand75 {
+    border-right: none;
+  }
+}
+
+
 .main-nav .navbar-nav .nav-item {
   position: relative;
   font-family: "Merriweather", sans-serif;

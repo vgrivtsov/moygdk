@@ -219,8 +219,8 @@ class CollectivePage(Page):
     image, introduction and body field
     """
 
-    subtitle = models.CharField(blank=True, max_length=255)
-    introduction = models.TextField(
+    subtitle = models.CharField("подзаголовок",blank=True, max_length=255)
+    introduction = models.TextField("описание",
         help_text='Текст, описывающий эту страницу',
         blank=True)
     image = models.ForeignKey(
@@ -232,11 +232,20 @@ class CollectivePage(Page):
         help_text='Landscape mode only; horizontal width between 1000px and 3000px.'
     )
     body = StreamField(
-        BaseStreamBlock(), verbose_name="Page body", blank=True
+        BaseStreamBlock(), verbose_name="Описание", blank=True
     )
+
+    paid_choise = (
+        ('paid_yes','Платный'),
+        ('paid_no', 'Бесплатный'),
+    )
+
+    club_paid = models.CharField("Платный-Бесплатный", max_length=255, choices=paid_choise, default='paid_no', help_text='Платный кружок')
+
     content_panels = Page.content_panels + [
         FieldPanel('subtitle', classname="full"),
         FieldPanel('introduction', classname="full"),
+        FieldPanel('club_paid', classname="full"),
         StreamFieldPanel('body'),
         ImageChooserPanel('image'),
     ]
