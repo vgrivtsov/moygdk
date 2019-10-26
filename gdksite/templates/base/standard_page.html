@@ -4,9 +4,13 @@
 {% block content %}
 
 <!--==============================
-=            {{page.title}       =
+=            {{page.title}}       =
 ===============================-->
-
+{% if page.title == "Клубные объединения" %}
+		{% include "base/club_page.html" %}
+{% elif page.title == "Коллектив" %}
+    {% include "base/staff_page.html" %}
+{% else %}
 <section class="section schedule">
 	<div class="container">
 		<!-- <div class="row">
@@ -26,7 +30,7 @@
 					  	<!-- Headings -->
 					  	<ul class="m-0 p-0">
 					  		<li class="headings">
-					  			<div class="speaker">{{page.title}}</div>
+					  			<div class="speaker">{{page.title}</div>
 					  		</li>
 					  		<!-- Schedule Details -->
                 {% for child in self.get_children.specific %}
@@ -71,5 +75,6 @@
 </section>
 
 <!--====  End of {{page.title}  ====-->
+{% endif %}
 
 {% endblock content %}
