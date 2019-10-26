@@ -1,0 +1,81 @@
+{% load wagtailimages_tags wagtailsimplegallery_tags %}
+
+<section class="section schedule">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-12">
+				{% if self.get_children.specific %}
+				<div class="schedule-contents bg-schedule">
+					<div class="tab-content" id="pills-tabContent">
+					  <div class="tab-pane fade show active schedule-item">
+					  	<!-- Headings -->
+					  	<ul class="m-0 p-0">
+					  		<li class="headings">
+					  			<div class="speaker">Коллективы на бесплатной основе</div>
+					  		</li>
+					  		<!-- Schedule Details -->
+                {% for child in self.get_children.specific %}
+							  	{% if child.club_paid == 'paid_no' %}
+
+					  		    <a href="{{child.url}}">
+                      <li class="schedule-details">
+					  		    	 <div class="block">
+							      		<!-- Speaker -->
+							      		<div class="speaker">
+                          {% image child.image fill-65x65-c0 as image %}
+                          <img src="{{ image.url }}"/>
+								    		  <span class="name">{{child.title}} <span class="alternate">{{child.subtitle}}</span></span>
+                        </div>
+					  		    	</div>
+					  	       </li>
+                    </a>
+										{% endif %}
+                {% endfor %}
+								<li class="headings">
+					  			<div class="speaker">Коллективы на платной основе</div>
+					  		</li>
+					  		<!-- Schedule Details -->
+                {% for child in self.get_children.specific %}
+							  	{% if child.club_paid == 'paid_yes' %}
+
+					  		    <a href="{{child.url}}">
+                      <li class="schedule-details">
+					  		    	 <div class="block">
+							      		<!-- Speaker -->
+							      		<div class="speaker">
+                          {% image child.image fill-65x65-c0 as image %}
+                          <img src="{{ image.url }}"/>
+								    		  <span class="name">{{child.title}} <span class="alternate">{{child.subtitle}}</span></span>
+                        </div>
+					  		    	</div>
+					  	       </li>
+                    </a>
+										{% endif %}
+                {% endfor %}
+					  	</ul>
+					  </div>
+					</div>
+				</div>
+					{% endif %}
+			</div>
+		</div>
+
+	</div>
+	{% if page.body %}
+	<div class="container">
+		<div class="standartpagebody">
+			{{page.body}}
+		</div>
+	</div>
+	<hr>
+	{% endif %}
+	<div class="container standardpage">
+			{% image page.image fill-700x377-c100 as image %}
+			<div class="image-block">
+				<img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" class="img-fluid" alt="speaker"/>
+			</div>
+	</div>
+</div>
+
+</section>

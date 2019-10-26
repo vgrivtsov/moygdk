@@ -1,0 +1,61 @@
+{% load wagtailcore_tags navigation_tags wagtailimages_tags %}
+{% load static %}
+    <!--================================
+    =            News Posts            =
+    =================================-->
+<style>
+.logo75 {
+  display: table;
+  margin: 0 auto;
+  /* border: 1px solid black; */
+}
+</style>
+    <section class="news section">
+
+    	<div class="container">
+        <div class="logo75 py-4">
+          <img src="{% static 'images/75let/Logotip gorizont.png' %}" alt="75_let_pobedy" style="width:1200px;height:455px;">
+        </div>
+    		<div class="row mt-30">
+    			<div class="col-lg-8 col-md-10 mx-auto">
+    				<div class="block">
+    					<div class="row">
+                {% if posts %}
+                    {% for blog in posts %}
+    						<div class="col-md-6 m-md-auto col-sm-8 col-10 m-auto">
+    							<div class="blog-post">
+    								<div class="post-thumb">
+                      {% image blog.image fill-350x350-c50 as image %}
+    									<a href="{% pageurl blog %}">
+                        {% image blog.image fill-350x350-c0 as image %}
+                         <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" class="img-fluid" />
+    									</a>
+    								</div>
+    								<div class="post-content">
+    									<div class="post-title ">
+    										<h2><a href="{% pageurl blog %}">{{ blog.title }}</a></h2>
+    									</div>
+    									<div class="post-meta">
+                        {% if blog.date_published %}
+                            {{ blog.date_published }}
+                        {% endif %}
+                        {% for author in blog.authors %}
+                            {{ author }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+                  {% endfor %}
+    					</div>
+            {% else %}
+              <div class="col-md-12">
+                  <p>Упс... Мы слишком заняты, чтобы написать хоть одну новость</p>
+              </div>
+          {% endif %}
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    <!--====  End of News Posts  ====-->
