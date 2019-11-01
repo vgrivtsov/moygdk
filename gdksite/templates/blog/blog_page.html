@@ -14,8 +14,8 @@
         					<!-- Article -->
         					<article class="blog-post single">
         						<div class="post-thumb">
-                      {% image page.image fill-1800x600-c0 as image %}
-                        <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" class="img-fluid" />
+                      {% image page.image original as image %}
+                        <img src="{{ image.url }}" width="1800" height="600" alt="{{ image.alt }}" class="img-fluid" />
         						</div>
         						<div class="post-content">
           							<div class="post-title">

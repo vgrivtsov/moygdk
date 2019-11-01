@@ -2864,9 +2864,12 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
-.news .blog-post .post-content .rich-text  img {
-    width: 100%;
-    height: auto;
+.news .blog-post .post-content .rich-text img {
+  display: block;
+  max-width:800px;
+  max-height:600px;
+  width: auto;
+  height: auto;
   }
 
 
