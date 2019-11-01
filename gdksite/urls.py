@@ -26,7 +26,7 @@ urlpatterns = [
 
     url('^sitemap\.xml$', sitemap),
     url(r'^api/v2/', api_router.urls),
-    url(r'^anketa/$', TemplateView.as_view(template_name='anketa.html')),
+    url(r'^anketa/$', TemplateView.as_view(template_name='anketa.html'), name='anketa'),
     url(r'^sponsors/$', SponsorsView.as_view(), name='sponsors'),
 ]
 
