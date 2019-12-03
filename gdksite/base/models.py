@@ -376,6 +376,22 @@ class HomePage(Page):
         verbose_name='Секция 3'
     )
 
+    featured_section_4_title = models.CharField(
+        null=True,
+        blank=True,
+        max_length=255,
+        help_text='Заголовок Секция 4'
+    )
+    featured_section_4 = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='',
+        verbose_name='Секция 4'
+    )
+
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             ImageChooserPanel('image'),
@@ -403,7 +419,12 @@ class HomePage(Page):
             MultiFieldPanel([
                 FieldPanel('featured_section_3_title'),
                 PageChooserPanel('featured_section_3'),
+                ]),
+            MultiFieldPanel([
+                FieldPanel('featured_section_4_title'),
+                PageChooserPanel('featured_section_4'),
                 ])
+
         ], heading="Секции главной страницы", classname="collapsible")
     ]
 
