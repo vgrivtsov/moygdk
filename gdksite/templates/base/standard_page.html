@@ -33,7 +33,7 @@
 					  			<div class="speaker">{{page.title}}</div>
 					  		</li>
 					  		<!-- Schedule Details -->
-                {% for child in self.get_children.specific %}
+                {% for child in self.get_children.specific|dictsortreversed:"id" %}
 					  		<a href="{{child.url}}">
                   <li class="schedule-details">
 					  			 <div class="block">

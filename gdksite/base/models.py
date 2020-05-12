@@ -206,12 +206,6 @@ class StandardPage(Page):
     ]
 
 
-    def get_context(self, request):
-        context = super(StandardPage, self).get_context(request)
-        # do the same thing for your other block types...
-
-        return context
-
 class CollectivePage(Page):
     """
     A generic content page. On this demo site we use it for an about page but
