@@ -53,6 +53,31 @@
                     </a>
 										{% endif %}
                 {% endfor %}
+
+                                                                <li class="headings">
+                                                                <div class="speaker">Коллективы на общественных началах</div>
+                                                        </li>
+                                                        <!-- Schedule Details -->
+                {% for child in self.get_children.specific %}
+                                                                {% if child.club_paid == 'volunteer' %}
+
+                                                            <a href="{{child.url}}">
+                      <li class="schedule-details">
+                                                                 <div class="block">
+                                                                        <!-- Speaker -->
+                                                                        <div class="speaker">
+                          {% image child.image fill-65x65-c0 as image %}
+                          <img src="{{ image.url }}"/>
+                                                                                  <span class="name">{{child.title}} <span class="alternate">{{child.subtitle}}</span></span>
+                        </div>
+                                                                </div>
+                                                       </li>
+                    </a>
+                                                                                {% endif %}
+                {% endfor %}
+
+
+
 					  	</ul>
 					  </div>
 					</div>

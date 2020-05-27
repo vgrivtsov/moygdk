@@ -232,6 +232,7 @@ class CollectivePage(Page):
     paid_choise = (
         ('paid_yes','Платный'),
         ('paid_no', 'Бесплатный'),
+        ('volunteer', 'На общественных началах'),
     )
 
     club_paid = models.CharField("Платный-Бесплатный", max_length=255, choices=paid_choise, default='paid_no', help_text='Платный кружок')
