@@ -52,58 +52,13 @@
   					</div>
   				</div>
   			</div>
+
+
         {% endif %}
   		</div>
   	</div>
   </section>
   <!--====  End of About  ====-->
-  <!--==========================
-  =          Feature 4  Pobeda75 News    =
-  ===========================-->
-  <section class="section-news">
-    {% if page.featured_section_3 %}
-  	<div class="container">
-  		<div class="row">
-  			<div class="col-12">
-  				<div class="section-title">
-            <a href="/75-летие-победы/"><h3><span class="alternate">75-летие Победы!</span></h3></a>
-  					<p>Новости, посвященные празднованию 75-летия Победы</p>
-  				</div>
-  			</div>
-  		</div>
-  		<div class="row">
-        {% for childpage in page.featured_section_4.specific.children|dictsortreversed:"date_published"|slice:"3" %}
-  			<div class="col-lg-4 col-md-6 col-sm-8 col-10 m-auto">
-  				<div class="blog-post">
-  					<div class="post-thumb">
-              <a href="{{childpage.url}}">
-                {% image childpage.image fill-350x250-c100 %}
-  						 <!-- <img src="{{ childpage.image.url }}" width="{{ childpage.image.width }}" height="{{ childpage.image.height }}" alt="{{ childpage.image.alt }}" class="img-fluid" /> -->
-  						</a>
-  					</div>
-  					<div class="post-content">
-  						<div class="post-title">
-  							<h2><a href="{{childpage.url}}">{{childpage.title}}</a></h2>
-  						</div>
-  						<!-- <div class="post-meta">
-  							<ul class="list-inline">
-  								<li class="list-inline-item">
-  									<i class="fa fa-user-o"></i>
-  									{% for author in childpage.authors %}
-                      {{ author }}{% if not forloop.last %}, {% endif %}
-                    {% endfor %}
-  								</li>
-  							</ul>
-  						</div> -->
-  					</div>
-  				</div>
-  			</div>
-        {% endfor %}
-  		</div>
-  	</div>
-    {% endif %}
-  </section>
-  <!--====  Feature 4 - Pobeda75 News  ====-->
 
   <!--===========================
   =            About            =

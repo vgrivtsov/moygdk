@@ -884,11 +884,11 @@ select.form-control:not([size]):not([multiple]) {
   padding: 18px 0;
 }
 
-.subfooter .copyright-text p {
+.subfooter .copyright-text .footer  {
   font-family: "Alice", sans-serif;
 }
 
-.subfooter .copyright-text p a {
+.subfooter .copyright-text .footer  {
   color: #ff6600;
 }
 
