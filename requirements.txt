@@ -47,7 +47,7 @@ jupyter-console==5.2.0
 jupyter-core==4.4.0
 kiwisolver==1.0.1
 ls.joyous==0.6.2
-lxml==4.2.5
+lxml==4.6.3
 MarkupSafe==1.1.0
 marshmallow==2.16.1
 matplotlib==2.2.3
